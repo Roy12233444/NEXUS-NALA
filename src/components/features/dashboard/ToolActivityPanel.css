@@ -1,0 +1,275 @@
+.tool-activity-panel {
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 6000: #1e293b;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tool-activity-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.activity-section {
+  background-color: #f8fafc;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+}
+
+.activity-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.predictions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prediction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.prediction-item:last-child {
+  border-bottom: none;
+}
+
+.prediction-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.confidence-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Confidence badge colors */
+.confidence-badge.confidence-90,
+.confidence-badge.confidence-100 {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.confidence-badge.confidence-80,
+.confidence-badge.confidence-89 {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.confidence-badge.confidence-70,
+.confidence-badge.confidence-79 {
+  background-color: #fed7aa;
+  color: #9a3412;
+}
+
+.confidence-badge.confidence-60,
+.confidence-badge.confidence-69 {
+  background-color: #fdd6d6;
+  color: #b91c1c;
+}
+
+.confidence-badge.confidence-0,
+.confidence-badge.confidence-59 {
+  background-color: #fecaca;
+  color: #991b1b;
+}
+
+.prediction-details {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.latency-reduction {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.reasoning-tag {
+  display: inline-block;
+  background-color: #e2e8f0;
+  color: #475569;
+  padding: 0.15rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.no-data {
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 1.5rem;
+}
+
+.warming-status-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tool-warming-status {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.tool-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tool-name {
+  font-weight: 600;
+  color: #334155;
+}
+
+.instance-count {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.instances-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.instance-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.instance-status:first-child {
+  border-top: none;
+}
+
+.instance-id {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.ready {
+  background-color: #22c55e;
+}
+
+.status-dot.warming {
+  background-color: #fbbf24;
+  animation: pulse 1.5s infinite;
+}
+
+.status-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.status-text.ready {
+  color: #166534;
+}
+
+.status-text.warming {
+  color: #92400e;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.usage-stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.usage-stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.usage-stat-item:last-child {
+  border-bottom: none;
+}
+
+.tool-name {
+  font-weight: 500;
+  color: #334155;
+}
+
+.usage-count {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.avg-latency {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tool-activity-content {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-activity-panel {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+}

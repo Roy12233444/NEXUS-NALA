@@ -1,0 +1,69 @@
+/* NALA Control Center UI_V2 - Sovereign High-Contrast Cybernetic Dark Theme */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-darkest: #05080E;
+  --bg-main: #080C14;
+  --bg-card: #0D121D;
+  --bg-card-hover: #131B2B;
+  --bg-input: #0B0F19;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: #E8791A;
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  --color-saffron: #E8791A;
+  --color-saffron-light: #F97316;
+  --color-teal: #00E5FF;
+  --color-green: #10B981;
+  --color-gold: #F59E0B;
+  --color-red: #EF4444;
+  --color-purple: #8B5CF6;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-darkest) !important;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow: hidden !important;
+}
+
+code, pre, .mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* Subtle Cybernetic Grid Matrix Pattern */
+.v2-app-container, .center-workspace, .chat-section-container, .graph-flow-container {
+  background-color: var(--bg-darkest);
+  background-image: 
+    radial-gradient(rgba(232, 121, 26, 0.035) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-darkest);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(232, 121, 26, 0.3);
+  border-radius: 3px;
+}

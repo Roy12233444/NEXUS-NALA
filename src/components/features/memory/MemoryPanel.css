@@ -1,0 +1,390 @@
+/*
+ * MemoryPanel.css
+ * Adapted from qm-main's shell.css (.memory-*, .pane-head, .memory-fact, etc.)
+ * Premium dark glassmorphic design — NALA aesthetic
+ */
+
+/* ─── Panel Container ─────────────────────────────────────────────────────── */
+.memory-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: hidden;
+}
+
+/* ─── Header (qm pane-head pattern) ─────────────────────────────────────── */
+.memory-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 20px 14px 20px;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.memory-panel-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.02em;
+}
+
+.memory-panel-subtitle {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.memory-panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* Tab buttons (Facts view / Edit notebook) */
+.memory-tab-btn {
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.memory-tab-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: rgba(17, 24, 39, 0.2);
+}
+
+.memory-tab-btn.active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.memory-refresh-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.memory-refresh-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  transform: rotate(45deg);
+}
+
+/* ─── Status Notice (qm status pattern) ────────────────────────────────────── */
+.memory-status {
+  padding: 8px 20px;
+  font-size: 12px;
+  color: #64748b;
+  background: #f8fafc;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+  flex-shrink: 0;
+}
+
+.memory-status.error {
+  color: #dc2626;
+  background: #fef2f2;
+  border-bottom-color: rgba(220, 38, 38, 0.1);
+}
+
+/* ─── Editor Area ────────────────────────────────────────────────────────── */
+.memory-editor-area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  padding: 16px 20px 0 20px;
+  gap: 12px;
+}
+
+/* Help text */
+.memory-help-text {
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* ─── Raw textarea (qm memory-text pattern) ─────────────────────────────── */
+.memory-raw-textarea {
+  flex: 1;
+  width: 100%;
+  min-height: 200px;
+  padding: 12px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 12.5px;
+  line-height: 1.7;
+  resize: none;
+  outline: none;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.memory-raw-textarea:focus {
+  border-color: rgba(17, 24, 39, 0.3);
+  background: #fff;
+}
+
+.memory-raw-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── Save bar ───────────────────────────────────────────────────────────── */
+.memory-save-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0 16px 0;
+  flex-shrink: 0;
+}
+
+.memory-save-btn {
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background: #0f172a;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.memory-save-btn:hover:not(:disabled) {
+  background: #1e293b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+}
+
+.memory-save-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.memory-unsaved-hint {
+  font-size: 11px;
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+/* ─── Search bar (qm memory-search pattern) ─────────────────────────────── */
+.memory-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 8px;
+  background: #f8fafc;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease;
+}
+
+.memory-search-bar:focus-within {
+  border-color: rgba(17, 24, 39, 0.3);
+  background: #fff;
+}
+
+.memory-search-icon {
+  font-size: 13px;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.memory-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  color: #0f172a;
+  font-family: inherit;
+}
+
+.memory-search-input::placeholder {
+  color: #94a3b8;
+}
+
+/* ─── Facts list (qm memory-facts pattern) ──────────────────────────────── */
+.memory-facts-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 4px;
+}
+
+.memory-facts-list::-webkit-scrollbar {
+  width: 4px;
+}
+.memory-facts-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.memory-facts-list::-webkit-scrollbar-thumb {
+  background: rgba(17, 24, 39, 0.1);
+  border-radius: 2px;
+}
+
+/* Empty state (qm empty-state pattern) */
+.memory-empty-state {
+  font-size: 13px;
+  color: #94a3b8;
+  text-align: center;
+  padding: 32px 16px;
+  line-height: 1.6;
+}
+
+/* Fact card (qm memory-fact pattern) */
+.memory-fact-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 8px;
+  background: #fafafa;
+  transition: all 0.15s ease;
+}
+
+.memory-fact-card:hover {
+  border-color: rgba(17, 24, 39, 0.16);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.05);
+}
+
+.memory-fact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.memory-fact-text {
+  font-size: 13px;
+  color: #1e293b;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.memory-fact-date {
+  font-size: 10px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Forget/delete button (qm icon-btn pattern) */
+.memory-forget-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  opacity: 0;
+}
+
+.memory-fact-card:hover .memory-forget-btn {
+  opacity: 1;
+}
+
+.memory-forget-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ─── Add fact bar ───────────────────────────────────────────────────────── */
+.memory-add-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0 16px 0;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(17, 24, 39, 0.06);
+  margin-top: 4px;
+}
+
+.memory-add-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.memory-add-input:focus {
+  border-color: rgba(17, 24, 39, 0.3);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.05);
+}
+
+.memory-add-input::placeholder {
+  color: #94a3b8;
+}
+
+.memory-add-btn {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background: #0f172a;
+  color: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.memory-add-btn:hover:not(:disabled) {
+  background: #1e293b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+}
+
+.memory-add-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}

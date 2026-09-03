@@ -1,0 +1,74 @@
+/* Run Logs Light Styling */
+.run-logs-card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  gap: 14px;
+}
+
+.logs-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logs-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.logs-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logs-search {
+  background: #FAF9F6;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  color: #111827;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  outline: none;
+  width: 140px;
+}
+
+.logs-console {
+  flex: 1;
+  background: #0F172A; /* High-contrast terminal slate console */
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 8px;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #F8FAFC;
+}
+
+.log-entry {
+  display: flex;
+  gap: 12px;
+  line-height: 1.5;
+}
+
+.log-time { color: #94A3B8; }
+.log-level.INFO { color: #38BDF8; font-weight: 700; }
+.log-level.DEBUG { color: #F59E0B; font-weight: 700; }
+.log-msg { color: #F1F5F9; }
+
+.logs-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(17, 24, 39, 0.6);
+  font-weight: 500;
+}

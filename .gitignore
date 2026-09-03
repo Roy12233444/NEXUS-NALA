@@ -1,0 +1,43 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+.venv/
+venv/
+.fcc_venv/
+*.egg-info/
+.pytest_cache/
+/.pytest_cache
+.soak_history/
+soak_runs/
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+
+# Rust / Cargo
+target/
+**/target/
+
+
+# Sessions & Checkpoints & Ephemeral State
+sessions/
+checkpoints/
+data/
+demo_files/
+*.log
+*.tmp
+*.pdf
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,172 @@
+/* Attachments Component Styling (nexus-ui.dev inspired) */
+.attachment-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.attachment-tile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 6px 10px;
+  max-width: 260px;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.attachment-tile:hover {
+  background: #E2E8F0;
+  border-color: #CBD5E1;
+}
+
+.attachment-thumb-container {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.attachment-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.attachment-icon-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  flex-shrink: 0;
+}
+
+.attachment-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.attachment-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0F172A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.attachment-meta-row {
+  font-size: 10px;
+  font-weight: 500;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.attachment-kind-badge {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #E8791A;
+}
+
+.attachment-remove-btn {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  padding: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.12s ease;
+}
+
+.attachment-remove-btn:hover {
+  color: #EF4444;
+}
+
+/* Progress bar inside tile (matching 3.png) */
+.attachment-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.08);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+
+.attachment-progress-fill {
+  height: 100%;
+  background: #0F172A;
+  transition: width 0.3s ease;
+}
+
+/* Pasted Text Attachment Card Variant (nexus-ui / 2.png) */
+.attachment-tile-pasted {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  width: 220px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.15s ease;
+}
+
+.attachment-tile-pasted:hover {
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+}
+
+.pasted-text-preview {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #64748B;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.pasted-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #EEF2F6;
+  padding-top: 6px;
+}
+
+.pasted-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

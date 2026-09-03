@@ -1,0 +1,57 @@
+@property --dot-matrix-hi {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --dot-matrix-lo {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.15;
+}
+
+@keyframes dotMatrixBlink {
+  0%, 100% {
+    opacity: var(--dot-matrix-hi, 1);
+    transform: scale(1);
+  }
+  50% {
+    opacity: var(--dot-matrix-lo, 0.15);
+    transform: scale(0.8);
+  }
+}
+
+.dot-matrix-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.dot-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1.5px;
+  width: 100%;
+  height: 100%;
+}
+
+.dot-matrix-cell {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  animation-name: dotMatrixBlink;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.dot-matrix-cell.active {
+  opacity: 1;
+}
+
+.dot-matrix-cell.inactive {
+  opacity: 0.15;
+}

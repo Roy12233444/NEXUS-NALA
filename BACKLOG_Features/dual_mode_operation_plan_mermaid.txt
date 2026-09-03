@@ -1,0 +1,61 @@
+```mermaid
+flowchart TD
+    subgraph PredictiveModeOrchestrator[Layer 1: Predictive Mode Orchestrator]
+        direction TB
+        WCI[Workload Complexity Index] --> PM[Predictive Mode Engine]
+        CLP[Cognitive Load Predictive] --> PM
+        SCS[State Cohesion Score] --> PM
+        HB[Hysteresis Buffer] --> PM
+        PM --> ModeDecision[Mode Decision]
+        ModeDecision -->|To AMP Client| AMPClient[Layer 2: Zero-Loss State Sync]
+    end
+
+    subgraph AMPClient[Layer 2: Zero-Loss State Sync]
+        direction TB
+        PrepInt[prepare_for_interaction()] -->|Prefetch context| AMPBuf[AMP Buffers]
+        PrepAuto[prepare_for_autonomous()] -->|Compress insights| AMPBuf
+        DoubleBuf[Double-buffering] -->E:\NALA-Project\NALA\BACKLOG_Features\dual_mode_operation_plan.md|Sync state| AMPBuf
+        CRDT[CRDTs] -->|Mergeable segments| AMPBuf
+        Checksum[Validation Checksum] -->|Detect corruption| AMPBuf
+        Chiranjeevi[Chiranjeevi Persistence] -->|Gradient checkpoint| AMPBuf
+    end
+
+    subgraph SafetyGateway[Layer 3: Adaptive Safety Gateway]
+        direction TB
+        Viveka[adaptive_viveka_gate.py] -->|Dynamic strictness| Validation
+        Satya[context_aware_satya_layer.py] -->|Truthfulness thresholds| Validation
+        Validation --> ModeDecision
+    end
+
+    subgraph ToolRouting[Layer 4: Intelligent Tool Routing]
+        direction TB
+        PredTool[predictive_tool_selector.py] -->|Anticipate tool needs| ToolCache[Warm tool containers]
+        HystTool[hysteresis_tool_governor.py] -->|Prevent thrashing| ToolCache
+        ToolCache -->|Mode-aware caching| ModeDecision
+    end
+
+    subgraph CogLoad[Layer 5: Cognitive Load Monitoring & Adaptive UX]
+        direction TB
+        CogMonitor[cognitive_load_monitor.py] -->|Interaction patterns| CLP
+        Interface[adaptive_interface_layer.py] -->|Adjust complexity| UX[User Experience]
+        UX -->|Feedback| CogMonitor
+    end
+
+    %% Data flow between layers
+    ModeDecision -->|Decision signal| AMPClient
+    ModeDecision -->|Decision signal| SafetyGateway
+    ModeDecision -->|Decision signal| ToolRouting
+    ModeDecision -->|Decision signal| CogLoad
+
+    %% Feedback loops
+    AMPClient -->|State integrity| SCS
+    ToolRouting -->|Tool latency| WCI
+    CogLoad -->|Cognitive load estimate| CLP
+    SafetyGateway -->|Fault prediction| HB
+
+    style PredictiveModeOrchestrator fill:#f9f,stroke:#333,stroke-width:2px
+    style AMPClient fill:#bbf,stroke:#333,stroke-width:2px
+    style SafetyGateway fill:#bfb,stroke:#333,stroke-width:2px
+    style ToolRouting fill:#ff9,stroke:#333,stroke-width:2px
+    style CogLoad fill:#f99,stroke:#333,stroke-width:2px
+```

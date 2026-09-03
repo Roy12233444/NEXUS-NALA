@@ -1,0 +1,29 @@
+{
+  "name": "nala-transcendent-reasoning-engine",
+  "version": "1.0.0",
+  "description": "NALA Transcendent Reasoning Engine - A sophisticated AI interface integrating Vedic cognitive frameworks with modern computational methods",
+  "main": "src/index.tsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.1",
+    "socket.io-client": "^4.7.2",
+    "katex": "^0.16.8"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/socket.io-client": "^3.0.0",
+    "@types/katex": "^0.16.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.0"
+  }
+}

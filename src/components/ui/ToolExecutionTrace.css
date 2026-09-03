@@ -1,0 +1,346 @@
+/* ─── Root Container ─────────────────────────────────────────────────────── */
+.tet-root {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E8EDF2;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #FAFBFC;
+  margin-bottom: 6px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  transition: border-color 0.2s ease;
+}
+
+.tet-root.active {
+  border-color: #C7D9F0;
+  background: #F7FAFD;
+}
+
+.tet-root.has-error {
+  border-color: #F0C7C7;
+}
+
+/* ─── Header / Summary Trigger ───────────────────────────────────────────── */
+.tet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: background 0.15s ease;
+  gap: 8px;
+}
+
+.tet-header:hover {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.tet-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.tet-header-icon {
+  display: flex;
+  align-items: center;
+  color: #94A3B8;
+  flex-shrink: 0;
+}
+
+.tet-header-icon.active { color: #3B82F6; }
+.tet-header-icon.done   { color: #22C55E; }
+.tet-header-icon.error  { color: #EF4444; }
+
+.tet-header-label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.tet-error-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #DC2626;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.tet-header-chevron {
+  display: flex;
+  align-items: center;
+  color: #94A3B8;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.tet-header:hover .tet-header-chevron {
+  color: #64748B;
+}
+
+/* ─── Steps Tree ─────────────────────────────────────────────────────────── */
+.tet-steps-tree {
+  padding: 6px 14px 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid #EDF0F4;
+  animation: tet-slide-in 0.18s ease;
+}
+
+@keyframes tet-slide-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Individual Step ────────────────────────────────────────────────────── */
+.tet-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 3px 0;
+}
+
+/* ─── Rail (status dot + connector line) ─────────────────────────────────── */
+.tet-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 16px;
+  padding-top: 3px;
+}
+
+.tet-status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tet-status-icon.completed { color: #22C55E; }
+.tet-status-icon.active    { color: #3B82F6; }
+.tet-status-icon.error     { color: #EF4444; }
+.tet-status-icon.pending   { color: #CBD5E1; }
+
+.tet-connector {
+  width: 1.5px;
+  flex: 1;
+  min-height: 18px;
+  background: #E2E8F0;
+  margin: 3px 0;
+  border-radius: 1px;
+  transition: background 0.3s ease;
+}
+
+.tet-connector.filled {
+  background: #86EFAC; /* light green for completed */
+}
+
+/* ─── Step Body ──────────────────────────────────────────────────────────── */
+.tet-body {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 6px;
+}
+
+.tet-step-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  border-radius: 5px;
+  transition: background 0.12s ease;
+}
+
+.tet-step-header.clickable {
+  cursor: pointer;
+}
+
+.tet-step-header.clickable:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.tet-tool-icon {
+  display: flex;
+  align-items: center;
+  color: #94A3B8;
+  flex-shrink: 0;
+}
+
+.tet-tool-badge {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #6366F1;
+  background: #EEF2FF;
+  border: 1px solid #C7D2FE;
+  border-radius: 4px;
+  padding: 1px 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tet-step-title {
+  font-size: 12.5px;
+  color: #334155;
+  font-weight: 400;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tet-step.active .tet-step-title {
+  color: #1E40AF;
+  font-weight: 500;
+}
+
+.tet-step.error .tet-step-title {
+  color: #DC2626;
+}
+
+.tet-step.pending .tet-step-title {
+  color: #94A3B8;
+}
+
+.tet-step-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.tet-duration {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #94A3B8;
+  white-space: nowrap;
+}
+
+.tet-chevron {
+  display: flex;
+  align-items: center;
+  color: #CBD5E1;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.tet-chevron.open {
+  color: #64748B;
+}
+
+/* ─── Detail Panel ───────────────────────────────────────────────────────── */
+.tet-detail-panel {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: tet-slide-in 0.15s ease;
+}
+
+.tet-detail-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tet-detail-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Code block (params) */
+.tet-code-block {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: #334155;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 0;
+  overflow-x: auto;
+  max-height: 160px;
+  white-space: pre;
+}
+
+/* Output terminal block */
+.tet-output-block {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: #94A3B8;
+  background: #0F172A;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 0;
+  overflow-x: auto;
+  max-height: 120px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Details bullet list */
+.tet-details-list {
+  margin: 0;
+  padding: 0 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tet-details-list li {
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* Error callout */
+.tet-error-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 12px;
+  color: #DC2626;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 6px;
+  padding: 8px 10px;
+  line-height: 1.5;
+}
+
+.tet-error-callout svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ─── Spin animation ─────────────────────────────────────────────────────── */
+@keyframes tet-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.tet-spin {
+  animation: tet-rotate 1s linear infinite;
+  transform-origin: center;
+}

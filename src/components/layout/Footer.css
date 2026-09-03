@@ -1,0 +1,35 @@
+.drishti-footer {
+  background: #0B132B;
+  border: 1px solid #1E3A5F;
+  border-radius: 6px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 10px;
+  color: #94A3B8;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-item .icon {
+  color: #00F0FF;
+  font-size: 12px;
+}
+
+.footer-item .label {
+  font-size: 8.5px;
+  color: #64748B;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-item .val {
+  color: #E2E8F0;
+  font-weight: 700;
+}

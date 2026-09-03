@@ -1,0 +1,143 @@
+![alt text](image.png)
+
+"use client";
+
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  Copy01Icon,
+  ThumbsUpIcon,
+  ThumbsDownIcon,
+  RepeatIcon,
+  Edit04Icon,
+} from "@hugeicons/core-free-icons";
+import { Button } from "@/components/ui/button";
+import {
+  Message,
+  MessageAction,
+  MessageActionGroup,
+  MessageActions,
+  MessageContent,
+  MessageMarkdown,
+  MessageStack,
+} from "@/components/nexus-ui/message";
+
+const MessageWithActions = () => {
+  return (
+    <div className="flex w-full flex-col items-center justify-center gap-6">
+      <Message from="user">
+        <MessageStack>
+          <MessageContent>
+            <MessageMarkdown>Tell me about Nexus UI.</MessageMarkdown>
+          </MessageContent>
+          <MessageActions>
+            <MessageActionGroup>
+              <MessageAction asChild tooltip={{ content: "Edit", shortcut: "E" }}>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon-sm"
+                  className="cursor-pointer rounded-full bg-transparent text-muted-foreground transition-all hover:bg-muted active:scale-97"
+                >
+                  <HugeiconsIcon
+                    icon={Edit04Icon}
+                    strokeWidth={2.0}
+                    className="size-4"
+                  />
+                </Button>
+              </MessageAction>
+              <MessageAction asChild tooltip="Copy">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon-sm"
+                  className="cursor-pointer rounded-full bg-transparent text-muted-foreground transition-all hover:bg-muted active:scale-97"
+                >
+                  <HugeiconsIcon
+                    icon={Copy01Icon}
+                    strokeWidth={2.0}
+                    className="size-4"
+                  />
+                </Button>
+              </MessageAction>
+            </MessageActionGroup>
+          </MessageActions>
+        </MessageStack>
+      </Message>
+
+      <Message from="assistant">
+        <MessageStack>
+          <MessageContent>
+            <MessageMarkdown>
+              Nexus UI is an open-source React component library aimed at AI-powered UIs—chat, streaming, and multimodal flows—built with Tailwind CSS v4 and Radix UI.
+            </MessageMarkdown>
+          </MessageContent>
+          <MessageActions>
+            <MessageActionGroup>
+              <MessageAction asChild tooltip="Copy response">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon-sm"
+                  className="cursor-pointer rounded-full bg-transparent text-muted-foreground transition-all hover:bg-muted active:scale-97"
+                >
+                  <HugeiconsIcon
+                    icon={Copy01Icon}
+                    strokeWidth={2.0}
+                    className="size-4"
+                  />
+                </Button>
+              </MessageAction>
+              <MessageAction
+                asChild
+                tooltip={{ content: "Like", side: "top", shortcut: "L" }}
+              >
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon-sm"
+                  className="cursor-pointer rounded-full bg-transparent text-muted-foreground transition-all hover:bg-muted active:scale-97"
+                >
+                  <HugeiconsIcon
+                    icon={ThumbsUpIcon}
+                    strokeWidth={2.0}
+                    className="size-4"
+                  />
+                </Button>
+              </MessageAction>
+              <MessageAction asChild tooltip="Dislike">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon-sm"
+                  className="cursor-pointer rounded-full bg-transparent text-muted-foreground transition-all hover:bg-muted active:scale-97"
+                >
+                  <HugeiconsIcon
+                    icon={ThumbsDownIcon}
+                    strokeWidth={2.0}
+                    className="size-4"
+                  />
+                </Button>
+              </MessageAction>
+              <MessageAction asChild tooltip={{ content: "Regenerate", side: "right" }}>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon-sm"
+                  className="cursor-pointer rounded-full bg-transparent text-muted-foreground transition-all hover:bg-muted active:scale-97"
+                >
+                  <HugeiconsIcon
+                    icon={RepeatIcon}
+                    strokeWidth={2.0}
+                    className="size-4"
+                  />
+                </Button>
+              </MessageAction>
+            </MessageActionGroup>
+          </MessageActions>
+        </MessageStack>
+      </Message>
+    </div>
+  );
+};
+
+export default MessageWithActions;

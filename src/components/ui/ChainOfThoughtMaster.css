@@ -1,0 +1,431 @@
+/* NALA Master Chain of Thought Styling */
+.cot-master-container {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  margin: 12px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.cot-master-container.rich {
+  border-color: #CBD5E1;
+}
+
+.cot-master-container.error {
+  border-color: #FECACA;
+  background: #FEF2F2;
+}
+
+.cot-master-container.no-header {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Trigger Bar */
+.cot-trigger-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #F8FAFC;
+  border: none;
+  border-bottom: 1px solid #F1F5F9;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.cot-trigger-bar:hover {
+  background: #F1F5F9;
+}
+
+.cot-trigger-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cot-trigger-icon {
+  display: flex;
+  align-items: center;
+  color: #E8791A;
+}
+
+.cot-trigger-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.cot-trigger-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cot-step-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748B;
+  background: #E2E8F0;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.cot-chevron {
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.cot-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* Content Body */
+.cot-content-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.animate-slide-down {
+  animation: slideDownCoT 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDownCoT {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Steps Timeline */
+.cot-steps-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cot-step-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background: #F8FAFC;
+  border: 1px solid #F1F5F9;
+  overflow: hidden;
+  transition: all 0.15s ease;
+}
+
+.cot-step-item.completed {
+  border-color: #E2E8F0;
+}
+
+.cot-step-item.active {
+  border-color: #3B82F6;
+  background: #EFF6FF;
+}
+
+.cot-step-item.error {
+  border-color: #FCA5A5;
+  background: #FEF2F2;
+}
+
+/* Step Header Line */
+.cot-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  user-select: none;
+}
+
+.cot-step-header.clickable {
+  cursor: pointer;
+}
+
+.cot-step-header.clickable:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.cot-step-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cot-status-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.cot-status-icon.completed {
+  background: #22C55E;
+  color: #FFFFFF;
+}
+
+.cot-status-icon.active {
+  background: #3B82F6;
+  color: #FFFFFF;
+}
+
+.cot-status-icon.error {
+  background: #EF4444;
+  color: #FFFFFF;
+}
+
+.cot-status-icon.pending {
+  background: #E2E8F0;
+  color: #94A3B8;
+}
+
+.cot-spinner {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #FFFFFF;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spinCoT 0.8s linear infinite;
+}
+
+@keyframes spinCoT {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cot-custom-icon {
+  display: flex;
+  align-items: center;
+}
+
+.cot-step-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.cot-tool-tag {
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #6366F1;
+  background: #EEF2FF;
+  padding: 1px 6px;
+  border-radius: 6px;
+  border: 1px solid #E0E7FF;
+}
+
+.cot-step-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cot-step-duration {
+  font-size: 11px;
+  font-family: monospace;
+  color: #94A3B8;
+}
+
+.cot-step-arrow {
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s ease;
+}
+
+.cot-step-arrow.open {
+  transform: rotate(90deg);
+}
+
+/* Sub-Content Box */
+.cot-subcontent-box {
+  padding: 10px 12px 12px 38px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Search Queries Pills */
+.cot-queries-wrapper {
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.cot-queries-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.cot-query-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 3px 8px;
+  border-radius: 14px;
+  font-size: 11px;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.query-icon {
+  color: #94A3B8;
+}
+
+/* Web Sources List */
+.cot-sources-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cot-source-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.cot-source-card:hover {
+  border-color: #CBD5E1;
+}
+
+.source-favicon {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+.source-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #0F172A;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.source-domain {
+  font-size: 10px;
+  font-family: monospace;
+  color: #94A3B8;
+}
+
+.source-link-icon {
+  color: #94A3B8;
+}
+
+/* Data Cards Grid */
+.cot-datacards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 6px;
+}
+
+.cot-data-card {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 8px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+}
+
+.card-label {
+  font-size: 10px;
+  color: #64748B;
+}
+
+.card-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.card-sub {
+  font-size: 9px;
+  color: #94A3B8;
+}
+
+/* Details Bullet List */
+.cot-details-list {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #475569;
+}
+
+/* Error Callout Box */
+.cot-error-box {
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.error-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #DC2626;
+  display: block;
+}
+
+.error-text {
+  margin: 2px 0 0 0;
+  font-size: 11px;
+  color: #991B1B;
+}
+
+/* Completion Footer */
+.cot-complete-footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+.complete-icon {
+  color: #16A34A;
+  display: flex;
+  align-items: center;
+}
+
+.complete-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #15803D;
+}
