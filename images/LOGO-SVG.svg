@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 310" width="100%" height="100%">
+  <defs>
+    <!-- Glow Filters -->
+    <filter id="intense-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="16" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Linear Gradients for Infinity Loop -->
+    <linearGradient id="cyan-stream" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F5FF"/>
+      <stop offset="50%" stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#0077B6"/>
+    </linearGradient>
+
+    <linearGradient id="purple-stream" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="40%" stop-color="#818CF8"/>
+      <stop offset="75%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#E879F9"/>
+    </linearGradient>
+
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <linearGradient id="chrome-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#F1F5F9"/>
+      <stop offset="65%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+
+    <linearGradient id="chrome-accent-cyan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE"/>
+      <stop offset="40%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <linearGradient id="divider-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00F0FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#C084FC" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ================================================================ -->
+  <!-- LEFT EMBLEM: SACRED GEOMETRY + INFINITY ENGINE                   -->
+  <!-- ================================================================ -->
+  <g id="Emblem" transform="translate(195, 155)">
+    <!-- Ambient Halo Behind Center Core -->
+    <circle cx="0" cy="0" r="95" fill="#00F0FF" fill-opacity="0.04" filter="url(#intense-glow)"/>
+    <circle cx="0" cy="0" r="50" fill="#818CF8" fill-opacity="0.08" filter="url(#intense-glow)"/>
+
+    <!-- Concentric Sacred Circles -->
+    <circle cx="0" cy="0" r="115" fill="none" stroke="#38BDF8" stroke-width="1.2" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+    <circle cx="0" cy="0" r="98" fill="none" stroke="#818CF8" stroke-width="1" stroke-opacity="0.4"/>
+    <circle cx="0" cy="0" r="75" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-opacity="0.5"/>
+    <circle cx="0" cy="0" r="52" fill="none" stroke="#C084FC" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="2 3"/>
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#00F0FF" stroke-width="1.2" stroke-opacity="0.6"/>
+
+    <!-- Sacred Geometry Diagonal Axis Lines & Diamond Grid -->
+    <line x1="0" y1="-122" x2="0" y2="122" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+    <line x1="-122" y1="0" x2="122" y2="0" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+    <line x1="-86" y1="-86" x2="86" y2="86" stroke="#818CF8" stroke-width="0.8" stroke-opacity="0.25"/>
+    <line x1="-86" y1="86" x2="86" y2="-86" stroke="#818CF8" stroke-width="0.8" stroke-opacity="0.25"/>
+
+    <!-- Diamond Frame -->
+    <polygon points="0,-98 98,0 0,98 -98,0" fill="none" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.35"/>
+
+    <!-- Satellite Nodes around Orbit -->
+    <circle cx="0" cy="-115" r="3.5" fill="#00F0FF" filter="url(#soft-glow)"/>
+    <circle cx="0" cy="115" r="3.5" fill="#00F0FF" filter="url(#soft-glow)"/>
+    <circle cx="-115" cy="0" r="3.5" fill="#00F0FF" filter="url(#soft-glow)"/>
+    <circle cx="115" cy="0" r="3.5" fill="#C084FC" filter="url(#soft-glow)"/>
+    <circle cx="-69" cy="-69" r="2.5" fill="#38BDF8" opacity="0.8"/>
+    <circle cx="69" cy="-69" r="2.5" fill="#C084FC" opacity="0.8"/>
+    <circle cx="-69" cy="69" r="2.5" fill="#38BDF8" opacity="0.8"/>
+    <circle cx="69" cy="69" r="2.5" fill="#C084FC" opacity="0.8"/>
+
+    <!-- INFINITY RIBBON GLOW BACKDROP -->
+    <path d="M 0,0 C -45,-58 -98,-58 -125,-25 C -152,8 -148,52 -115,70 C -82,88 -45,55 0,0 C 45,58 98,58 125,25 C 152,-8 148,-52 115,-70 C 82,-88 45,-55 0,0 Z"
+          fill="none" stroke="#00F0FF" stroke-width="26" stroke-opacity="0.18" filter="url(#intense-glow)" stroke-linecap="round"/>
+
+    <!-- LEFT INFINITY LOOP (Electric Cyan Flow) -->
+    <path d="M 0,0 C -38,-50 -85,-54 -115,-25 C -145,4 -142,48 -112,66 C -82,84 -40,46 0,0"
+          fill="none" stroke="url(#cyan-stream)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Left Loop Specular Ridge -->
+    <path d="M 0,0 C -38,-50 -85,-54 -115,-25 C -145,4 -142,48 -112,66 C -82,84 -40,46 0,0"
+          fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-opacity="0.75" stroke-linecap="round"/>
+
+    <!-- RIGHT INFINITY LOOP (Cosmic Violet / Magenta Flow) -->
+    <path d="M 0,0 C 38,50 85,54 115,25 C 145,-4 142,-48 112,-66 C 82,-84 40,-46 0,0"
+          fill="none" stroke="url(#purple-stream)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Right Loop Specular Ridge -->
+    <path d="M 0,0 C 38,50 85,54 115,25 C 145,-4 142,-48 112,-66 C 82,-84 40,-46 0,0"
+          fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-opacity="0.75" stroke-linecap="round"/>
+
+    <!-- Outer Infinity Accent Traces -->
+    <path d="M 0,0 C -45,-58 -98,-58 -125,-25 C -152,8 -148,52 -115,70"
+          fill="none" stroke="#00F0FF" stroke-width="1.8" stroke-opacity="0.8" filter="url(#soft-glow)"/>
+    <path d="M 0,0 C 45,58 98,58 125,25 C 152,-8 148,-52 115,-70"
+          fill="none" stroke="#E879F9" stroke-width="1.8" stroke-opacity="0.8" filter="url(#soft-glow)"/>
+
+    <!-- CENTRAL SACRED TESSERACT / HEXAGONAL HYPERCUBE -->
+    <!-- Outer Hexagon -->
+    <polygon points="0,-42 36.4,-21 36.4,21 0,42 -36.4,21 -36.4,-21"
+             fill="#0B132B" fill-opacity="0.7" stroke="#00F0FF" stroke-width="2.2" filter="url(#soft-glow)"/>
+    
+    <!-- Isometric Cube Vertex Lines -->
+    <line x1="0" y1="0" x2="0" y2="-42" stroke="#38BDF8" stroke-width="1.8"/>
+    <line x1="0" y1="0" x2="36.4" y2="21" stroke="#38BDF8" stroke-width="1.8"/>
+    <line x1="0" y1="0" x2="-36.4" y2="21" stroke="#38BDF8" stroke-width="1.8"/>
+
+    <!-- Inner Isometric Hexagon -->
+    <polygon points="0,-24 20.8,-12 20.8,12 0,24 -20.8,12 -20.8,-12"
+             fill="#001B3A" fill-opacity="0.6" stroke="#818CF8" stroke-width="1.6"/>
+
+    <!-- Core Radiant Singularity -->
+    <circle cx="0" cy="0" r="12" fill="#00F0FF" fill-opacity="0.3" filter="url(#intense-glow)"/>
+    <circle cx="0" cy="0" r="7" fill="#FFFFFF" filter="url(#soft-glow)"/>
+    <circle cx="0" cy="0" r="4" fill="#00F0FF"/>
+
+    <!-- Corner Node Points on Outer Hexagon -->
+    <circle cx="0" cy="-42" r="3" fill="#00F0FF"/>
+    <circle cx="36.4" cy="-21" r="3" fill="#38BDF8"/>
+    <circle cx="36.4" cy="21" r="3" fill="#818CF8"/>
+    <circle cx="0" cy="42" r="3" fill="#C084FC"/>
+    <circle cx="-36.4" cy="21" r="3" fill="#818CF8"/>
+    <circle cx="-36.4" cy="-21" r="3" fill="#38BDF8"/>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- VERTICAL HARMONIC DIVIDER                                        -->
+  <!-- ================================================================ -->
+  <g id="Divider" transform="translate(378, 0)">
+    <line x1="0" y1="45" x2="0" y2="265" stroke="url(#divider-grad)" stroke-width="2"/>
+    <circle cx="0" cy="155" r="5" fill="#00F0FF" filter="url(#intense-glow)"/>
+    <circle cx="0" cy="155" r="2.5" fill="#FFFFFF"/>
+    <circle cx="0" cy="85" r="2" fill="#38BDF8" opacity="0.6"/>
+    <circle cx="0" cy="225" r="2" fill="#818CF8" opacity="0.6"/>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- RIGHT TYPOGRAPHY SECTION                                         -->
+  <!-- ================================================================ -->
+  <g id="Typography" transform="translate(415, 0)">
+    <!-- NALA Vector Glyphs -->
+    <g id="NALA-Wordmark" transform="translate(0, 72)">
+      <!-- LETTER N -->
+      <path d="M 0,86 L 0,0 L 22,0 L 76,64 L 76,0 L 98,0 L 98,86 L 76,86 L 22,22 L 22,86 Z"
+            fill="url(#chrome-grad)" filter="url(#soft-glow)"/>
+      <path d="M 0,0 L 22,0 L 76,64 L 76,0 L 98,0"
+            fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.8"/>
+
+      <!-- LETTER A (First) -->
+      <path d="M 158,0 L 182,0 L 236,86 L 210,86 L 197,64 L 143,64 L 130,86 L 104,86 Z M 153,46 L 187,46 L 170,18 Z"
+            fill="url(#chrome-grad)" filter="url(#soft-glow)"/>
+      <path d="M 158,0 L 182,0 L 236,86"
+            fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.8"/>
+
+      <!-- LETTER L (Signature Cyan Accent) -->
+      <path d="M 248,0 L 272,0 L 272,64 L 334,64 L 334,86 L 248,86 Z"
+            fill="url(#chrome-accent-cyan)" filter="url(#intense-glow)"/>
+      <path d="M 248,0 L 272,0 L 272,64 L 334,64 L 334,86"
+            fill="none" stroke="#E0F2FE" stroke-width="1.8" stroke-opacity="0.9"/>
+
+      <!-- LETTER A (Second) -->
+      <path d="M 394,0 L 418,0 L 472,86 L 446,86 L 433,64 L 379,64 L 366,86 L 340,86 Z M 389,46 L 423,46 L 406,18 Z"
+            fill="url(#chrome-grad)" filter="url(#soft-glow)"/>
+      <path d="M 394,0 L 418,0 L 472,86"
+            fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.8"/>
+
+      <!-- Starburst Specular Glint on Top Apex -->
+      <g transform="translate(170, 0)">
+        <line x1="-12" y1="0" x2="12" y2="0" stroke="#FFFFFF" stroke-width="1.8" filter="url(#intense-glow)"/>
+        <line x1="0" y1="-12" x2="0" y2="12" stroke="#FFFFFF" stroke-width="1.8" filter="url(#intense-glow)"/>
+        <circle cx="0" cy="0" r="3" fill="#FFFFFF"/>
+      </g>
+    </g>
+
+    <!-- PRIMARY SUBTITLE -->
+    <text x="3" y="196"
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif"
+          font-size="16" font-weight="700" letter-spacing="4.5" fill="#00F0FF"
+          filter="url(#soft-glow)">
+      NEXUS AUTONOMOUS LONG-RUNNING AGENT
+    </text>
+
+    <!-- HORIZONTAL ACCENT DIVIDER WITH GLOWING NODE -->
+    <g transform="translate(3, 218)">
+      <line x1="0" y1="0" x2="495" y2="0" stroke="#38BDF8" stroke-width="1.4" stroke-opacity="0.5"/>
+      <!-- Glowing Center Node -->
+      <circle cx="240" cy="0" r="5" fill="#00F0FF" filter="url(#intense-glow)"/>
+      <circle cx="240" cy="0" r="2.5" fill="#FFFFFF"/>
+    </g>
+
+    <!-- SECONDARY SUBTITLE (Pillars) -->
+    <text x="3" y="246"
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif"
+          font-size="13.5" font-weight="600" letter-spacing="3.8" fill="#E2E8F0">
+      DETERMINISTIC <tspan fill="#38BDF8">•</tspan> SELF-HEALING <tspan fill="#C084FC">•</tspan> SOVEREIGN
+    </text>
+  </g>
+</svg>

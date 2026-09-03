@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="images/LOGO-SVG.png" alt="NALA Logo" width="750">
+<img src="images/LOGO-SVG.svg" alt="NALA Logo" width="850">
 
 <br/>
 <br/>
