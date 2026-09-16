@@ -41,3 +41,6 @@ demo_files/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Excluded projects
+Desk-Project/claudedesk_v2/
